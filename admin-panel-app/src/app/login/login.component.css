@@ -1,0 +1,84 @@
+/* Genel sayfa stili */
+body {
+  background: linear-gradient(135deg, #2980b9, #2c3e50);
+  font-family: 'Arial', sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login kutusu stili */
+.login-container {
+  display: flex;
+  justify-content: flex-end; /* Sağ tarafa hizalar */
+  align-items: center;
+  height: 100vh; /* Tam ekran yüksekliği */
+  background-image: url('/assets/login.jpg'); /* Arka plan görseli */
+  background-size: cover; /* Görselin tam olarak kaplamasını sağlar */
+  background-position: center; /* Görseli ortalar */
+  background-repeat: no-repeat; /* Görselin tekrar etmesini engeller */
+}
+
+.login-box {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  text-align: center;
+  margin-right:150px;
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+/* Form stili */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  margin-bottom: 5px;
+  color: #555555;
+  font-weight: bold;
+  text-align: left;
+  display: block;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login-button {
+  background-color: #2980b9;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #2c3e50;
+}
+
+.error-message {
+  margin-top: 10px;
+  color: #e74c3c;
+  font-size: 14px;
+}
