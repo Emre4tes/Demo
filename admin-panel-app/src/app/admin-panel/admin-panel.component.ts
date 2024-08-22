@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-panel',
@@ -6,45 +7,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-panel.component.css']
 })
 export class AdminPanelComponent {
+  // Yurtlar ve Öğrenciler kategorilerinin açılıp kapanma durumları için flag'ler
+  isYurtlarCollapsed = true;
+  isOgrencilerCollapsed = true;
 
+  constructor(private router: Router) {}
 
-  // Bu fonksiyon kullanıcı profili ile ilgili bir işlev olabilir
-  viewProfile() {
-    alert('Viewing profile (this could be a link to another component or a service call)');
+  // Toggle fonksiyonları
+  toggleYurtlar() {
+    this.isYurtlarCollapsed = !this.isYurtlarCollapsed;
   }
 
+  toggleOgrenciler() {
+    this.isOgrencilerCollapsed = !this.isOgrencilerCollapsed;
+  }
 
-
-  // Bu fonksiyon çıkış işlemi ile ilgili bir işlev olabilir
+  // Logout fonksiyonu
   logout() {
-    alert('Logging out (this could involve clearing tokens and redirecting)');
-  }
+    // Burada kullanıcıyı oturumdan çıkarmak için gerekli işlemleri yap
+    // (örneğin, token'ı temizleme, kullanıcı verilerini sıfırlama vb.)
 
-  // Menü seçeneklerine tıklandığında içerik güncellemek için kullanılabilir
-  updateContent(section: string) {
-    switch (section) {
-      case 'dashboard':
-        // Dashboard içeriği güncelleme kodu
-        alert('Showing Dashboard content');
-        break;
-      case 'users':
-        // Kullanıcılar içeriği güncelleme kodu
-        alert('Showing Users content');
-        break;
-      case 'events':
-        // Etkinlikler içeriği güncelleme kodu
-        alert('Showing Events content');
-        break;
-      case 'reports':
-        // Raporlar içeriği güncelleme kodu
-        alert('Showing Reports content');
-        break;
-      case 'settings':
-        // Ayarlar içeriği güncelleme kodu
-        alert('Showing Settings content');
-        break;
-      default:
-        alert('Unknown section');
-    }
+    // Kullanıcıyı login sayfasına yönlendir
+    this.router.navigate(['/login']);
   }
 }

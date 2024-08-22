@@ -168,7 +168,7 @@ body {
 }
 
 /* Menü öğesi üzerine gelindiğinde dropdown menüyü gösterir */
-.sidebar .nav-item {
+.sidebar .nav-item .dropdown-item{
   position: relative; /* Dropdown menüyü konumlandırmak için */
   margin-bottom: 0.5rem; /* Menü öğeleri arasında boşluk */
 }

@@ -17,7 +17,6 @@ export class LoginComponent {
   onSubmit() {
     console.log('Login attempt:', { username: this.username, password: this.password });
 
-    // 'withCredentials' seçeneğini ekledik
     this.http.post<{ message: string, token: string }>(
       'http://localhost:3000/login',
       { username: this.username, password: this.password },
@@ -35,7 +34,7 @@ export class LoginComponent {
           this.loginError = 'Invalid credentials';
         }
       },
-      error: (error) => {
+      error: error => {
         console.error('Login error:', error);
         this.loginError = 'Invalid credentials';  // Hata mesajını kullanıcıya göster
       }

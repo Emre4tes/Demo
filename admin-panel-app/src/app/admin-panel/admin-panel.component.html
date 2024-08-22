@@ -9,31 +9,20 @@
   <meta name="generator" content="Bootstrap 5.3">
   <title>Admin Panel · Bootstrap v5.3</title>
 
-  <link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl7+5hb7U5Ll7jDQpRYm52Ev2wpYrBl9B5uJ1O2SRN" crossorigin="anonymous">
   <link rel="stylesheet" href="./admin-panel.component.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css">
-
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-  <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-  <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
-  <link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
-  <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
-  <meta name="theme-color" content="#712cf9">
 </head>
 
 <body>
   <header class="header d-flex justify-content-between align-items-center">
     <h1 class="h3 mb-0">Admin Panel</h1>
     <div class="dropdown">
-      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-          data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="bi bi-person-circle"></i> User
-        </button>
-      </ul>
+      <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-person-circle"></i> User
+      </button>
     </div>
   </header>
 
@@ -42,56 +31,92 @@
       <h4>Menu</h4>
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link active" href="#">
+          <a class="nav-link active" >
             <i class="bi bi-house-door"></i> Dashboard
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="bi bi-person"></i> Kullanıclar
+          <a class="nav-link" >
+            <i class="bi bi-person"></i> Kullanıcılar
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="javascript:void(0);" (click)="toggleYurtlar()">
             <i class="bi bi-file-earmark-text"></i> Yurtlar
           </a>
-          <ul class="dropdown-menu-c" aria-labelledby="studentsDropdown">
-            <button><a class="dropdown-item" href="#">Kategoriler 1</a></button>
-            <button><a class="dropdown-item" href="#">Kategoriler 2</a></button>
-            <button><a class="dropdown-item" href="#">Kategoriler 3</a></button>
-            <button><a class="dropdown-item" href="#">Kategoriler 4</a></button>
+          <ul *ngIf="!isYurtlarCollapsed" class="nav flex-column ms-3">
+            <li><a class="nav-link" href="/yurt/yediveren">Özel İnsan Vakfı Yediveren Yükseköğretim Erkek Öğrenci Yurdu</a></li>
+            <li><a class="nav-link" href="/yurt/akif-emre">Özel İnsan Vakfı Akif Emre Yükseköğretim Erkek Öğrenci Yurdu</a></li>
+            <li><a class="nav-link" href="/yurt/aksa">Özel İnsan Vakfı Aksa Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li><a class="nav-link" href="/yurt/alanya">Özel İnsan Vakfı Alanya Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li><a class="nav-link" href="/yurt/efeler">Özel İnsan Vakfı Efeler Yükseköğretim Erkek Öğrenci Yurdu</a></li>
+            <li><a class="nav-link" href="/yurt/bolu">Özel İnsan Vakfı Bolu Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li><a class="nav-link" href="/yurt/ramazan-karaalp">Özel İnsan Vakfı Ramazan Karaalp Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li><a class="nav-link" href="/yurt/kayapinar">Özel İnsan Vakfı Kayapınar Yükseköğretim Erkek Öğrenci Yurdu</a></li>
+            <li><a class="nav-link" href="/yurt/erzincan">Özel İnsan Vakfı Erzincan Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li><a class="nav-link" href="/yurt/suheyla-sitki-alp">Özel İnsan Vakfı Atatürk Üniversitesi Süheyla Sıtkı Alp Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li><a class="nav-link" href="/yurt/isparta">Özel İnsan Vakfı Isparta Yükseköğretim Erkek Öğrenci Yurdu</a></li>
+            <li><a class="nav-link" href="/yurt/ahmet-haluk-dursun">Özel İnsan Vakfı Prof. Dr. Ahmet Haluk Dursun Yükseköğretim Erkek Öğrenci Yurdu</a></li>
+            <li><a class="nav-link" href="/yurt/maltepe">Özel İnsan Vakfı Maltepe Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li><a class="nav-link" href="/yurt/ihlamurkuyu">Özel Ihlamurkuyu Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li><a class="nav-link" href="/yurt/metin-yuksel">Özel İnsan Vakfı Metin Yüksel Yükseköğretim Erkek Öğrenci Yurdu</a></li>
+            <li><a class="nav-link" href="/yurt/mehmet-akif-ersoy">Özel İnsan Vakfı Mehmet Akif Ersoy Yükseköğretim Erkek Öğrenci Yurdu</a></li>
+            <li><a class="nav-link" href="/yurt/bakir-koy">Özel İnsan Vakfı Bakırköy Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li><a class="nav-link" href="/yurt/bahcelievler">Özel İnsan Vakfı Bahçelievler Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li><a class="nav-link" href="/yurt/bornova">Özel İnsan Vakfı Bornova Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li><a class="nav-link" href="/yurt/sehit-bahattin-yildiz">Özel İnsan Vakfı Şehit Bahattin Yıldız Yükseköğretim Erkek Öğrenci Yurdu</a></li>
+            <li><a class="nav-link" href="/yurt/nevres-ongun">Özel İnsan Vakfı Nevres Ongun Yükseköğretim Erkek Öğrenci Yurdu</a></li>
+            <li><a class="nav-link" href="/yurt/medeniyet">Özel Medeniyet Yükseköğretim Erkek Öğrenci Yurdu</a></li>
+            <li><a class="nav-link" href="/yurt/vefa">Özel İnsan Vakfı Vefa Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li><a class="nav-link" href="/yurt/mavera">Özel İnsan Vakfı Mavera Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li><a class="nav-link" href="/yurt/vera">Özel İnsan Vakfı Vera Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li><a class="nav-link" href="/yurt/dirilis">Özel İnsan Vakfı Diriliş Yükseköğretim Erkek Öğrenci Yurdu</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="bi bi-file-earmark-text"></i> Öğrenciler
+          <a class="nav-link" href="javascript:void(0);" (click)="toggleOgrenciler()">
+            <i class="bi bi-file-earmark-text"></i> Öğrenci
           </a>
-          <ul class="dropdown-menu-c" aria-labelledby="studentsDropdown">
-            <button><a class="dropdown-item" href="#">Kategoriler 1</a></button>
-            <button><a class="dropdown-item" href="#">Kategoriler 2</a></button>
-            <button><a class="dropdown-item" href="#">Kategoriler 3</a></button>
-            <button><a class="dropdown-item" href="#">Kategoriler 4</a></button>
+          <ul *ngIf="!isOgrencilerCollapsed" class="nav flex-column ms-3">
+            <li><a class="nav-link" href="/ogrenciler/kayitli">Kayıtlı Öğrenciler</a></li>
+            <li><a class="nav-link" href="/ogrenciler/burslu">Burslu Öğrenciler</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" >
+            <i class="bi bi-journal"></i> Burslar
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" >
+            <i class="bi bi-calendar-event"></i> Etkinlikler
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" >
+            <i class="bi bi-cash"></i> Mali Raporlar
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" >
             <i class="bi bi-gear"></i> Ayarlar
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="dropdown-item" href="#">Logout</i>
+          <a class="nav-link" href="#" (click)="logout()">
+            <i class="bi bi-power"></i> Logout
           </a>
         </li>
       </ul>
     </nav>
+
+    <main class="p-4 flex-grow-1">
+      <!-- Content goes here -->
+    </main>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz4fnFOwH16f2GzR7SH9WbZL4FEJ9oBzDd9uRHS5e6C8dgj8P7z5p/3H9" crossorigin="anonymous"></script>
-  <script src="/docs/5.3/dist/js/bootstrap.min.js"
-    integrity="sha384-Tb6Skl8FFJ9bB0I6kzxfr42s0e4u03u6vPj6zGDFR+xJdBhmLMO/5v5AkM5XZC6e"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kkmDzZVmlv0ElnMCSXn7FFjU3Pm5He3Eww8ZacJ+RZ8ZmrZh8W+qTIjpT6ka3F0J" crossorigin="anonymous"></script>
 </body>
 
 </html>
