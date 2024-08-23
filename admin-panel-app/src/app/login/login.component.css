@@ -15,7 +15,7 @@ body {
   justify-content: flex-end; /* Sağ tarafa hizalar */
   align-items: center;
   height: 100vh; /* Tam ekran yüksekliği */
-  background-image: url('/assets/login.jpg'); /* Arka plan görseli */
+ /* background-image: url('/assets/login.jpg'); /* Arka plan görseli */
   background-size: cover; /* Görselin tam olarak kaplamasını sağlar */
   background-position: center; /* Görseli ortalar */
   background-repeat: no-repeat; /* Görselin tekrar etmesini engeller */

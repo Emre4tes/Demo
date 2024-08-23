@@ -1,5 +1,3 @@
-// routes/userRoutes.js
-
 const express = require('express');
 const { authenticateToken } = require('../middleware/authMiddleware');
 const { loginUser } = require('../controllers/userController');
