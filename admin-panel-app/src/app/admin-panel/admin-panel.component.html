@@ -36,32 +36,32 @@
             <i class="bi bi-file-earmark-text"></i> Yurtlar
           </a>
           <ul *ngIf="!isYurtlarCollapsed" class="nav flex-column ms-3">
-            <li><a class="nav-link" [routerLink]="['/yurt/1']">Özel İnsan Vakfı Yediveren Yükseköğretim Erkek Öğrenci Yurdu</a></li>
-            <li><a class="nav-link" [routerLink]="['/yurt/2']">Özel İnsan Vakfı Akif Emre Yükseköğretim Erkek Öğrenci Yurdu</a></li>
-            <li><a class="nav-link" [routerLink]="['/yurt/3']">Özel İnsan Vakfı Aksa Yükseköğretim Kız Öğrenci Yurdu</a></li>
-            <li><a class="nav-link" [routerLink]="['/yurt/4']">Özel İnsan Vakfı Alanya Yükseköğretim Kız Öğrenci Yurdu</a></li>
-            <li><a class="nav-link" [routerLink]="['/yurt/5']">Özel İnsan Vakfı Efeler Yükseköğretim Erkek Öğrenci Yurdu</a></li>
-            <li><a class="nav-link" [routerLink]="['/yurt/6']">Özel İnsan Vakfı Bolu Yükseköğretim Kız Öğrenci Yurdu</a></li>
-            <li><a class="nav-link" [routerLink]="['/yurt/7']">Özel İnsan Vakfı Ramazan Karaalp Yükseköğretim Kız Öğrenci Yurdu</a></li>
-            <li><a class="nav-link" [routerLink]="['/yurt/8']">Özel İnsan Vakfı Kayapınar Yükseköğretim Erkek Öğrenci Yurdu</a></li>
-            <li><a class="nav-link" [routerLink]="['/yurt/9']">Özel İnsan Vakfı Erzincan Yükseköğretim Kız Öğrenci Yurdu</a></li>
-            <li><a class="nav-link" [routerLink]="['/yurt/10']">Özel İnsan Vakfı Atatürk Üniversitesi Süheyla Sıtkı Alp Yükseköğretim Kız Öğrenci Yurdu</a></li>
-            <li><a class="nav-link" [routerLink]="['/yurt/11']">Özel İnsan Vakfı Isparta Yükseköğretim Erkek Öğrenci Yurdu</a></li>
-            <li><a class="nav-link" [routerLink]="['/yurt/12']">Özel İnsan Vakfı Prof. Dr. Ahmet Haluk Dursun Yükseköğretim Erkek Öğrenci Yurdu</a></li>
-            <li><a class="nav-link" [routerLink]="['/yurt/13']">Özel İnsan Vakfı Maltepe Yükseköğretim Kız Öğrenci Yurdu</a></li>
-            <li><a class="nav-link" [routerLink]="['/yurt/14']">Özel Ihlamurkuyu Yükseköğretim Kız Öğrenci Yurdu</a></li>
-            <li><a class="nav-link" [routerLink]="['/yurt/15']">Özel İnsan Vakfı Metin Yüksel Yükseköğretim Erkek Öğrenci Yurdu</a></li>
-            <li><a class="nav-link" [routerLink]="['/yurt/16']">Özel İnsan Vakfı Mehmet Akif Ersoy Yükseköğretim Erkek Öğrenci Yurdu</a></li>
-            <li><a class="nav-link" [routerLink]="['/yurt/17']">Özel İnsan Vakfı Bakırköy Yükseköğretim Kız Öğrenci Yurdu</a></li>
-            <li><a class="nav-link" [routerLink]="['/yurt/18']">Özel İnsan Vakfı Bahçelievler Yükseköğretim Kız Öğrenci Yurdu</a></li>
-            <li><a class="nav-link" [routerLink]="['/yurt/19']">Özel İnsan Vakfı Bornova Yükseköğretim Kız Öğrenci Yurdu</a></li>
-            <li><a class="nav-link" [routerLink]="['/yurt/20']">Özel İnsan Vakfı Şehit Bahattin Yıldız Yükseköğretim Erkek Öğrenci Yurdu</a></li>
-            <li><a class="nav-link" [routerLink]="['/yurt/21']">Özel İnsan Vakfı Nevres Ongun Yükseköğretim Erkek Öğrenci Yurdu</a></li>
-            <li><a class="nav-link" [routerLink]="['/yurt/22']">Özel Medeniyet Yükseköğretim Erkek Öğrenci Yurdu</a></li>
-            <li><a class="nav-link" [routerLink]="['/yurt/23']">Özel İnsan Vakfı Vefa Yükseköğretim Kız Öğrenci Yurdu</a></li>
-            <li><a class="nav-link" [routerLink]="['/yurt/24']">Özel İnsan Vakfı Mavera Yükseköğretim Kız Öğrenci Yurdu</a></li>
-            <li><a class="nav-link" [routerLink]="['/yurt/25']">Özel İnsan Vakfı Vera Yükseköğretim Kız Öğrenci Yurdu</a></li>
-            <li><a class="nav-link" [routerLink]="['/yurt/26']">Özel İnsan Vakfı Diriliş Yükseköğretim Erkek Öğrenci Yurdu</a></li>
+            <li *ngFor="let yurt of yurtlar"><a class="nav-link" [routerLink]="['/yurt', yurt.id]">Özel İnsan Vakfı Yediveren Yükseköğretim Erkek Öğrenci Yurdu</a></li>
+            <li *ngFor="let yurt of yurtlar"><a class="nav-link" [routerLink]="['/yurt', yurt.id]">Özel İnsan Vakfı Akif Emre Yükseköğretim Erkek Öğrenci Yurdu</a></li>
+            <li *ngFor="let yurt of yurtlar"><a class="nav-link" [routerLink]="['/yurt', yurt.id]">Özel İnsan Vakfı Aksa Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li *ngFor="let yurt of yurtlar"><a class="nav-link" [routerLink]="['/yurt', yurt.id]">Özel İnsan Vakfı Alanya Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li *ngFor="let yurt of yurtlar"><a class="nav-link" [routerLink]="['/yurt', yurt.id]">Özel İnsan Vakfı Efeler Yükseköğretim Erkek Öğrenci Yurdu</a></li>
+            <li *ngFor="let yurt of yurtlar"><a class="nav-link" [routerLink]="['/yurt', yurt.id]">Özel İnsan Vakfı Bolu Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li *ngFor="let yurt of yurtlar"><a class="nav-link" [routerLink]="['/yurt', yurt.id]">Özel İnsan Vakfı Ramazan Karaalp Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li *ngFor="let yurt of yurtlar"><a class="nav-link" [routerLink]="['/yurt', yurt.id]">Özel İnsan Vakfı Kayapınar Yükseköğretim Erkek Öğrenci Yurdu</a></li>
+            <li *ngFor="let yurt of yurtlar"><a class="nav-link" [routerLink]="['/yurt', yurt.id]">Özel İnsan Vakfı Erzincan Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li *ngFor="let yurt of yurtlar"><a class="nav-link" [routerLink]="['/yurt', yurt.id]">Özel İnsan Vakfı Atatürk Üniversitesi Süheyla Sıtkı Alp Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li *ngFor="let yurt of yurtlar"><a class="nav-link" [routerLink]="['/yurt', yurt.id]">Özel İnsan Vakfı Isparta Yükseköğretim Erkek Öğrenci Yurdu</a></li>
+            <li *ngFor="let yurt of yurtlar"><a class="nav-link" [routerLink]="['/yurt', yurt.id]">Özel İnsan Vakfı Prof. Dr. Ahmet Haluk Dursun Yükseköğretim Erkek Öğrenci Yurdu</a></li>
+            <li *ngFor="let yurt of yurtlar"><a class="nav-link" [routerLink]="['/yurt', yurt.id]">Özel İnsan Vakfı Maltepe Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li *ngFor="let yurt of yurtlar"><a class="nav-link" [routerLink]="['/yurt', yurt.id]">Özel Ihlamurkuyu Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li *ngFor="let yurt of yurtlar"><a class="nav-link" [routerLink]="['/yurt', yurt.id]">Özel İnsan Vakfı Metin Yüksel Yükseköğretim Erkek Öğrenci Yurdu</a></li>
+            <li *ngFor="let yurt of yurtlar"><a class="nav-link" [routerLink]="['/yurt', yurt.id]">Özel İnsan Vakfı Mehmet Akif Ersoy Yükseköğretim Erkek Öğrenci Yurdu</a></li>
+            <li *ngFor="let yurt of yurtlar"><a class="nav-link" [routerLink]="['/yurt', yurt.id]">Özel İnsan Vakfı Bakırköy Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li *ngFor="let yurt of yurtlar"><a class="nav-link" [routerLink]="['/yurt', yurt.id]">Özel İnsan Vakfı Bahçelievler Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li *ngFor="let yurt of yurtlar"><a class="nav-link" [routerLink]="['/yurt', yurt.id]">Özel İnsan Vakfı Bornova Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li *ngFor="let yurt of yurtlar"><a class="nav-link" [routerLink]="['/yurt', yurt.id]">Özel İnsan Vakfı Şehit Bahattin Yıldız Yükseköğretim Erkek Öğrenci Yurdu</a></li>
+            <li *ngFor="let yurt of yurtlar"><a class="nav-link" [routerLink]="['/yurt', yurt.id]">Özel İnsan Vakfı Nevres Ongun Yükseköğretim Erkek Öğrenci Yurdu</a></li>
+            <li *ngFor="let yurt of yurtlar"><a class="nav-link" [routerLink]="['/yurt', yurt.id]">Özel Medeniyet Yükseköğretim Erkek Öğrenci Yurdu</a></li>
+            <li *ngFor="let yurt of yurtlar"><a class="nav-link" [routerLink]="['/yurt', yurt.id]">Özel İnsan Vakfı Vefa Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li *ngFor="let yurt of yurtlar"><a class="nav-link" [routerLink]="['/yurt', yurt.id]">Özel İnsan Vakfı Mavera Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li *ngFor="let yurt of yurtlar"><a class="nav-link" [routerLink]="['/yurt', yurt.id]">Özel İnsan Vakfı Vera Yükseköğretim Kız Öğrenci Yurdu</a></li>
+            <li *ngFor="let yurt of yurtlar"><a class="nav-link" [routerLink]="['/yurt', yurt.id]">Özel İnsan Vakfı Diriliş Yükseköğretim Erkek Öğrenci Yurdu</a></li>
           </ul>
         </li>
         <li class="nav-item">

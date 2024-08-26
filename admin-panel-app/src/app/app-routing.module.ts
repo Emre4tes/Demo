@@ -8,7 +8,6 @@ const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'admin', component: AdminPanelComponent },
-  { path: '**', redirectTo: 'login' },
   { path: 'yurt/:id', component: YurtDetailComponent },
 ];
 
@@ -16,8 +15,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-  static forRoot(routes: any): any[] | import("@angular/core").Type<any> | import("@angular/core").ModuleWithProviders<{}> {
-    throw new Error('Method not implemented.');
-  }
-}
+export class AppRoutingModule {}
+
