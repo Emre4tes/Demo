@@ -7,6 +7,9 @@ import { Yurt } from 'src/model/yurt.model';
   providedIn: 'root'
 })
 export class YurtService {
+  getYurtlar() {
+    throw new Error('Method not implemented.');
+  }
 
   private apiUrl = '/api/yurtlar';
 

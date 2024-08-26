@@ -1,33 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
 import { YurtService } from '../service/yurt.service';
 
 @Component({
   selector: 'app-yurt-detail',
-  templateUrl: './yurt-detail.component.html',
-  styleUrls: ['./yurt-detail.component.css'],
+  templateUrl: './yurt-detail.component.html'
 })
 export class YurtDetailComponent implements OnInit {
-  yurtId: number | undefined; // Doğru veri tipi
-  yurtDetail: any; // Tip belirtebilirsiniz: Yurt
+  @Input() yurtId: string | undefined;
+  yurtDetail: any;
 
-  constructor(
-    private route: ActivatedRoute,
-    private yurtService: YurtService
-  ) {}
+  constructor(private yurtService: YurtService) {}
 
   ngOnInit(): void {
-    const idParam = this.route.snapshot.paramMap.get('id');
-    if (idParam) {
-      this.yurtId = +idParam; // ID'yi number'a çeviriyoruz
-      this.getYurtDetails();  // Doğru fonksiyon ismi
-    }
-  }
-
-  getYurtDetails(): void {
-    if (this.yurtId !== undefined) {
-      this.yurtService.getYurtById(this.yurtId).subscribe((details) => {
-        this.yurtDetail = details; // Doğru değişken ismi
+    if (this.yurtId) {
+      this.yurtService.getYurtDetail(this.yurtId).subscribe(data => {
+        this.yurtDetail = data;
       });
     }
   }

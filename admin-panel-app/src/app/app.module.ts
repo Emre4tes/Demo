@@ -8,13 +8,15 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { YurtDetailComponent } from './yurt-detail/yurt-detail.component';
+import { YurtListComponent } from './yurt-list/yurt-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AdminPanelComponent,
-    YurtDetailComponent
+    YurtDetailComponent,
+    YurtListComponent
   ],
   imports: [
     BrowserModule,

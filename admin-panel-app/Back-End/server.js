@@ -27,7 +27,7 @@ let users = [
   { username: 'Seyit', password: bcrypt.hashSync('45252Ordu', saltRounds) }
 ];
 
-let yurtlar = [
+const yurtlar = [
   { id: '1', name: 'Yediveren Yükseköğretim Erkek Öğrenci Yurdu', address: 'Address 1', capacity: 100, price: 1500, description: 'Description of Yurt 1' },
   { id: '2', name: 'Akif Emre Yükseköğretim Erkek Öğrenci Yurdu', address: 'Address 2', capacity: 150, price: 1700, description: 'Description of Yurt 2' },
   { id: '2', name: 'Aksa Yükseköğretim Kız Öğrenci Yurdu', address: 'Address 4', capacity: 150, price: 1700, description: 'Description of Yurt 2' },
@@ -55,21 +55,18 @@ let yurtlar = [
   { id: '25', name: 'Vera Yükseköğretim Kız Öğrenci Yurdu', address: 'Address 24', capacity: 150, price: 1700, description: 'Description of Yurt 2' },
   { id: '26', name: 'Diriliş Yükseköğretim Erkek Öğrenci Yurdu', address: 'Address 24', capacity: 150, price: 1700, description: 'Description of Yurt 2' },
 
-  // Add more yurts here
 ];
 
-// Yurtları getirme
-app.get('/api/yurtlar', (req, res) => {
-  res.json(yurtlar);
-});
+app.use(express.json());
 
-// Belirli bir yurdu getirme
+// Yurt detayları için endpoint
 app.get('/api/yurtlar/:id', (req, res) => {
-  const yurt = yurtlar.find(y => y.id === req.params.id);
+  const yurtId = parseInt(req.params.id, 10);
+  const yurt = yurtlar.find(y => y.id === yurtId);
   if (yurt) {
     res.json(yurt);
   } else {
-    res.status(404).send('Yurt not found');
+    res.status(404).json({ message: 'Yurt bulunamadı' });
   }
 });
 
